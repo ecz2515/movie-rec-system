@@ -1,38 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Movie Recommendation</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <h1>Movie Recommendation</h1>
-        <h2>Welcome to the RAISO Movie Recommendation System!</h2>
-        <p>Enter the official name of any movie (as it appears on IMDb) to get
-            data on its year, genres, rating, vote count, and a movie poster!</p>
-        <p>Our recommendation system will also give you a rating from 1 (terrible)
-            to 5 (awesome) based on the live RAISO data from last Monday's workshop.</p>
-        <form method="post">
-            <label for="movie_name">Enter a movie name:</label>
-            <input type="text" id="movie_name" name="movie_name" required>
-            <button type="submit">Submit</button>
-        </form>
-        
-        {% if new_movie_prediction is defined %}
-            <h2>Predicted Rating:</h2>
-            <p>{{ new_movie_prediction }}</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-            <h2>Details of the New Movie:</h2>
-            <p>Rating: {{ new_movie_rating }}</p>
-            <p>Year: {{ new_movie_year }}</p>
-            <p>Genres: {{ new_movie_genres }}</p>
-            
-            <h2>Movie Poster:</h2>
-            <img src="{{ new_movie_poster_url }}" alt="Movie Poster">
-        {% endif %}
-    </body>
-    </html>
+<style>
+    /* CSS styles for the index.html file */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        color: #666;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    p {
+        color: #999;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 30px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+</style>
+
+<body>
+    <h1>Movie Recommendation</h1>
+    <h2>Welcome to the RAISO Movie Recommendation System!</h2>
+    <p>Enter the official name of any movie (as it appears on IMDb) to get
+        data on its year, genres, rating, vote count, and a movie poster!</p>
+    <p>Our recommendation system will also give you a rating from 1 (terrible)
+        to 5 (awesome) based on the live RAISO data from last Monday's workshop.</p>
+    <form method="post">
+        <label for="movie_name">Enter a movie name:</label>
+        <input type="text" id="movie_name" name="movie_name" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    {% if new_movie_prediction is defined %}
+        <h2>Predicted Rating:</h2>
+        <p>{{ new_movie_prediction }}</p>
+
+        <h2>Details of the New Movie:</h2>
+        <p>Rating: {{ new_movie_rating }}</p>
+        <p>Year: {{ new_movie_year }}</p>
+        <p>Genres: {{ new_movie_genres }}</p>
+        
+        <h2>Movie Poster:</h2>
+        <img src="{{ new_movie_poster_url }}" alt="Movie Poster">
+    {% endif %}
+</body>
+</html>
