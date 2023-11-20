@@ -1,0 +1,23 @@
+/* FILEPATH: /Users/evanchen/Desktop/movie-rec-system/templates/styles.css */
+
+/* Add CSS rules to decorate index.html */
+
+/* Example: Change the background color of the body */
+body {
+    background-color: lightblue;
+}
+
+/* Example: Add a border to all images */
+img {
+    border: 1px solid black;
+}
+
+/* Example: Center align the text in a heading */
+h1 {
+    text-align: center;
+}
+
+/* Example: Add a box shadow to a div */
+.my-div {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
